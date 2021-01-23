@@ -1,0 +1,64 @@
+<app-navbar></app-navbar>
+
+<br>
+<div fxLayout="row" fxLayoutAlign="center start">
+
+    <button mat-raised-button color="accent" [routerLink]="['/pacientes-page']">Regresar <mat-icon>login</mat-icon></button>
+
+</div>
+
+<div fxLayout="row" fxLayoutAlign="center center" class="center">
+
+    <mat-card class="example-card">
+
+        <mat-card-header>
+            <mat-card-title>Actualizar Paciente</mat-card-title>
+        </mat-card-header>
+
+        <form class="example-form">
+
+            <mat-form-field class="example-full-width">
+            <mat-label>Nombre</mat-label>
+            <input matInput placeholder="nombre" type="text" name="nombre" required [(ngModel)]="paciente.nombre">
+            </mat-form-field>
+        
+            <mat-form-field class="example-full-width">
+            <mat-label>Apellido</mat-label>
+            <input matInput placeholder="apellido" type="text" name="apellido" required [(ngModel)]="paciente.apellido">
+            </mat-form-field>
+
+            <mat-label>Fecha de Nacimiento</mat-label>
+            <table class="example-full-width" cellspacing="0"><tr>
+                <td><mat-form-field class="example-full-width">
+                  <mat-label>Dia</mat-label>
+                  <input matInput type="number" name="dia" required [(ngModel)]="beforeNaci.dia">
+                </mat-form-field></td>
+                <td><mat-form-field class="example-full-width">
+                  <mat-label>Mes</mat-label>
+                  <input matInput type="number" name="mes" required [(ngModel)]="beforeNaci.mes">
+                </mat-form-field></td>
+                <td><mat-form-field class="example-full-width">
+                    <mat-label>Año</mat-label>
+                    <input matInput type="number" name="ano" required [(ngModel)]="beforeNaci.ano">
+                  </mat-form-field></td>
+            </tr></table>
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Direccion</mat-label>
+                <textarea matInput [(ngModel)]="paciente.direccion" name="direccion"></textarea>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Genero</mat-label>
+                <mat-select [(ngModel)]="paciente.genero" name="genero">  
+                  <mat-option *ngFor="let genero of generoList" [value]="genero">{{genero}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <button type="submit" mat-raised-button color="primary" (click)="updatePaciente()">Actualizar Paciente</button>
+
+        </form>
+
+    </mat-card>
+
+</div>

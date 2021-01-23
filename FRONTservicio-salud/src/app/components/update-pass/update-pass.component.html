@@ -1,0 +1,24 @@
+<mat-card class="example-card">
+
+    <mat-card-header>
+       <mat-icon color="primary">update</mat-icon>
+       <mat-card-title> Actualizar Contraseña</mat-card-title>    
+    </mat-card-header>
+
+    <form (ngSubmit)="actualizarPass( fActualizarPass )" #fActualizarPass class="example-form">
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Nueva Contraseña</mat-label>
+            <input matInput type="password" name="pass1" required [(ngModel)]="newPass.pass1">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Repita Nueva Contraseña</mat-label>
+            <input matInput type="password" name="pass2" required [(ngModel)]="newPass.pass2">
+        </mat-form-field>
+        
+        <button type="submit" mat-raised-button color="primary" [disabled]="newPass.pass1.length < 1">Actualizar Contraseña</button>
+        
+    </form>
+
+</mat-card>

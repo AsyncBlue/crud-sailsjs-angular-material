@@ -1,0 +1,25 @@
+<mat-toolbar color="primary" fxLayout="row" fxLayoutAlign="space-evenly center" >
+
+    <div>
+        <h1>SERVICIO DE SALUD</h1>
+    </div>
+
+    <div>
+        <button mat-button [routerLink]="['/mi-perfil-page']"> Mi Datos</button>
+
+        <button mat-button *ngIf="usuario.perfil==='super_admin'" [routerLink]="['/funcionarios-page']"> Funcionarios</button>
+
+        <button mat-button *ngIf="usuario.perfil==='super_admin'" [routerLink]="['/cargos-page']"> Cargos</button>
+
+        <button mat-button *ngIf="usuario.perfil==='super_admin'" [routerLink]="['/unidades-page']"> Unidades Administrativas</button>
+
+        <button *ngIf="usuario.perfil==='super_admin' || usuario.perfil==='admin'" mat-button [routerLink]="['/pacientes-page']"> Pacientes</button>
+    </div>
+
+    <div>
+        <button mat-button (click)="logout()"> Cerrar Sesion
+            <mat-icon>login</mat-icon>
+        </button>
+    </div>
+    
+</mat-toolbar>

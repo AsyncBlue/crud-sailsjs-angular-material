@@ -1,0 +1,41 @@
+<form class="example-form">
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Nombre</mat-label>
+      <input matInput placeholder="nombre" type="text" name="nombre" required [(ngModel)]="registerUser.nombre">
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <mat-label>Apellido</mat-label>
+      <input matInput placeholder="apellido" type="text" name="apellido" required [(ngModel)]="registerUser.apellido">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>RUT</mat-label>
+      <input matInput placeholder="Ingrese RUT solo con guion. EJ: 11111111-1" type="text" name="rut" required [(ngModel)]="registerUser.rut">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Perfil</mat-label>
+      <mat-select [(ngModel)]="registerUser.perfil" name="perfil">
+        <mat-option *ngFor="let perfil of perfilList" [value]="perfil">{{perfil}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Unidad Administrativa</mat-label>
+      <mat-select [(ngModel)]="registerUser.unidadAdministrativa" name="unidadAdministrativa">
+        <mat-option *ngFor="let uniAdmin of unidadAdministrativaList" [value]="uniAdmin.titulo">{{uniAdmin.titulo}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Cargo</mat-label>
+      <mat-select [(ngModel)]="registerUser.cargo" name="cargo">  
+        <mat-option *ngFor="let cargo of cargoList" [value]="cargo.titulo">{{cargo.titulo}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <button type="submit" mat-raised-button color="primary" (click)="registro()">Crear Funcionario</button>
+
+</form>

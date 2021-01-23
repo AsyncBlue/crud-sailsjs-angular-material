@@ -1,0 +1,41 @@
+<app-navbar></app-navbar>
+
+<br>
+<div fxLayout="row" fxLayoutAlign="center start">
+
+    <button mat-raised-button color="accent" [routerLink]="['/mi-perfil-page']">Regresar <mat-icon>login</mat-icon></button>
+
+</div>
+
+<br>
+
+<div fxLayout="row" fxLayoutAlign="center center" >
+
+<table mat-table [dataSource]="data" class="mat-elevation-z8">
+
+	<ng-container matColumnDef="dia">
+		<th mat-header-cell *matHeaderCellDef> Dia </th>
+    <td mat-cell *matCellDef="let element"> {{element.dia}} </td>
+	</ng-container>
+
+	<ng-container matColumnDef="mes">
+		<th mat-header-cell *matHeaderCellDef> Mes </th>
+		<td mat-cell *matCellDef="let element"> {{element.mes}} </td>
+	</ng-container>
+    
+    <ng-container matColumnDef="ano">
+		<th mat-header-cell *matHeaderCellDef> Ano </th>
+		<td mat-cell *matCellDef="let element"> {{element.ano}} </td>
+    </ng-container>
+    
+    <ng-container matColumnDef="hora">
+		<th mat-header-cell *matHeaderCellDef> Hora </th>
+		<td mat-cell *matCellDef="let element"> {{element.hora}} </td>
+	</ng-container>
+
+	<tr mat-header-row *matHeaderRowDef="tableColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: tableColumns;"></tr>
+    
+</table>
+
+</div>

@@ -1,0 +1,48 @@
+<form class="example-form">
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Nombre</mat-label>
+      <input matInput placeholder="nombre" type="text" name="nombre" required [(ngModel)]="registerPaciente.nombre">
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <mat-label>Apellido</mat-label>
+      <input matInput placeholder="apellido" type="text" name="apellido" required [(ngModel)]="registerPaciente.apellido">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>RUT</mat-label>
+      <input matInput placeholder="Ingrese RUT solo con guion. EJ: 11111111-1" type="text" name="rut" required [(ngModel)]="registerPaciente.rut">
+    </mat-form-field>
+
+    <mat-label>Fecha de Nacimiento</mat-label>
+    <table class="example-full-width" cellspacing="0"><tr>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>Dia</mat-label>
+          <input matInput type="number" name="dia" required [(ngModel)]="beforeNaci.dia">
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>Mes</mat-label>
+          <input matInput type="number" name="mes" required [(ngModel)]="beforeNaci.mes">
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+            <mat-label>Año</mat-label>
+            <input matInput type="number" name="ano" required [(ngModel)]="beforeNaci.ano">
+          </mat-form-field></td>
+    </tr></table>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Direccion</mat-label>
+      <textarea matInput [(ngModel)]="registerPaciente.direccion" name="direccion"></textarea>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Genero</mat-label>
+      <mat-select [(ngModel)]="registerPaciente.genero" name="genero">  
+        <mat-option *ngFor="let genero of generoList" [value]="genero">{{genero}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <button type="submit" mat-raised-button color="primary" (click)="crearPaciente()">Crear Paciente</button>
+
+</form>

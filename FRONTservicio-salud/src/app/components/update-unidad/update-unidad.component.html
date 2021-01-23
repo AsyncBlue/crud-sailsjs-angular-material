@@ -1,0 +1,41 @@
+<app-navbar></app-navbar>
+
+<br>
+<div fxLayout="row" fxLayoutAlign="center start">
+
+    <button mat-raised-button color="accent" [routerLink]="['/unidades-page']">Regresar <mat-icon>login</mat-icon></button>
+
+</div>
+
+<div fxLayout="row" fxLayoutAlign="center center" class="center">
+
+    <mat-card class="example-card">
+
+        <mat-card-header>
+            <mat-card-title>Actualizar Unidad Administrativa</mat-card-title>
+        </mat-card-header>
+
+        <form class="example-form">
+
+            <mat-form-field class="example-full-width">
+            <mat-label>Titulo</mat-label>
+            <input matInput placeholder="titulo" type="text" name="titulo" required [(ngModel)]="unidad.titulo">
+            </mat-form-field>
+        
+            <mat-form-field class="example-full-width">
+            <mat-label>Descripcion</mat-label>
+            <input matInput placeholder="descripcion" type="text" name="descripcion" required [(ngModel)]="unidad.descripcion">
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+            <mat-label>Unidad Padre</mat-label>
+            <input matInput placeholder="Unidad Padre" type="text" name="unidadPadre" required [(ngModel)]="unidad.unidadPadre">
+            </mat-form-field>
+
+            <button type="submit" mat-raised-button color="primary" (click)="updateUnidad()">Actualizar Unidad</button>
+
+        </form>
+
+    </mat-card>
+
+</div>

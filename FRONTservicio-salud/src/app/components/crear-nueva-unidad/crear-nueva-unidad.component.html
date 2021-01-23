@@ -1,0 +1,16 @@
+<form class="example-form">
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Titulo</mat-label>
+      <input matInput placeholder="titulo" type="text" name="titulo" required [(ngModel)]="registerUnidad.titulo">
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <mat-label>Descripcion</mat-label>
+      <input matInput placeholder="descripcion" type="text" name="descripcion" required [(ngModel)]="registerUnidad.descripcion">
+    </mat-form-field>
+
+    <button type="submit" mat-raised-button color="primary" (click)="crearUnidad()">Crear Unidad Administrativa</button>
+
+</form>
+

@@ -1,0 +1,26 @@
+.example-form {
+    /* min-width: 150px;
+    max-width: 500px; */
+    width: 100%;
+}
+  
+.example-full-width {
+    width: 100%;
+}
+
+.center {
+    height: 60%
+}
+
+mat-card {
+    max-width: 500px;
+}
+
+.example-card {
+   /*  max-width: 300px; */
+    overflow: unset !important;
+    color: purple;
+    -webkit-box-shadow: 0 2px 10px -5px rgba(0,0,0,0.5);
+    box-shadow: 0 6px 10px -5px rgba(0, 195, 255, 0.87);
+    border-top: 2px solid #7000FF;
+}

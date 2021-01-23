@@ -1,0 +1,76 @@
+<mat-tab-group mat-align-tabs="center" backgroundColor="primary">
+
+    <mat-tab label="Iniciar Sesión">
+
+      <mat-card>
+
+        <mat-card-header>
+            <mat-card-title>Iniciar Sesión</mat-card-title>
+        </mat-card-header>
+    
+        <form (ngSubmit)="login(fLogin)" #fLogin="ngForm" class="example-form">
+
+            <mat-form-field class="example-full-width">
+              <mat-label>RUT</mat-label>
+              <input matInput placeholder="RUT" type="text" name="rut" required [(ngModel)]="loginUser.rut">
+            </mat-form-field>
+          
+            <mat-form-field class="example-full-width">
+              <mat-label>Password</mat-label>
+              <input matInput placeholder="Contraseña" type="password" name="password" required [(ngModel)]="loginUser.password">
+            </mat-form-field>
+
+            <button type="submit" mat-raised-button color="primary">Iniciar Sesión</button>
+
+        </form>
+    
+    </mat-card>
+
+    </mat-tab>
+
+    <mat-tab label="Crear Usuario">
+
+      <mat-card>
+
+        <mat-card-header>
+            <mat-card-title>Crear Usuario</mat-card-title>
+            <mat-card-subtitle>
+              <p style="color: blue;">*Al crear un usuario su contraseña sera los primeros 4 digitos de su RUT.</p>
+              <p style="color: blue;">*Luego si el perfil es "super_admin" podra generar cargos y unidades administrativas y añadirselas a un usuario.</p> 
+            </mat-card-subtitle>
+        </mat-card-header>
+    
+        <form (ngSubmit)="registro(fRegistro)" #fRegistro="ngForm" class="example-form">
+
+            <mat-form-field class="example-full-width">
+              <mat-label>Nombre</mat-label>
+              <input matInput placeholder="nombre" type="text" name="nombre" required [(ngModel)]="registerUser.nombre">
+            </mat-form-field>
+          
+            <mat-form-field class="example-full-width">
+              <mat-label>Apellido</mat-label>
+              <input matInput placeholder="apellido" type="text" name="apellido" required [(ngModel)]="registerUser.apellido">
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+              <mat-label>RUT</mat-label>
+              <input matInput placeholder="Ingrese RUT solo con guion. EJ: 11111111-1" type="text" name="rut" required [(ngModel)]="registerUser.rut">
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+              <mat-label>Perfil</mat-label>
+              <mat-select [(ngModel)]="registerUser.perfil" name="perfil">
+                <mat-option *ngFor="let perfil of perfilList" [value]="perfil">{{perfil}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <button type="submit" mat-raised-button color="primary">Crear Usuario</button>
+
+        </form>
+    
+    </mat-card>
+
+    </mat-tab>
+
+</mat-tab-group>
+

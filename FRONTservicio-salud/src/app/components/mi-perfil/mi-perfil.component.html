@@ -1,0 +1,22 @@
+<mat-card class="example-card">
+    <mat-card-header>
+        <img mat-card-avatar class="example-header-image" src="assets/img/{{avatar}}">
+        <mat-card-title>{{ usuario.nombre }} {{ usuario.apellido }}</mat-card-title>
+    </mat-card-header>
+
+        <img mat-card-image src="assets/img/{{avatar}}">
+
+    <mat-card-content>
+        
+        <mat-list role="list">
+            <mat-list-item role="listitem"><strong>RUT:</strong> &nbsp;&nbsp; {{usuario.rut}}</mat-list-item>
+            <mat-list-item role="listitem"><strong>Unidad Administrativa:</strong> &nbsp;&nbsp; {{usuario.unidadAdministrativa}}</mat-list-item>
+            <mat-list-item role="listitem"><strong>Cargo:</strong> &nbsp;&nbsp; {{usuario.cargo}}</mat-list-item>
+        </mat-list>
+
+    </mat-card-content>   
+    
+    <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="verRegistro()">Registro de Inicio de Sesion</button>
+    </mat-card-actions>
+</mat-card>
